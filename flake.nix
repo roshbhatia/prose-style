@@ -29,10 +29,7 @@
           name = "prose-style-format";
           runtimeInputs = [ pkgs.nixfmt ];
           text = ''
-            if [ "$#" -eq 0 ]; then
-              set -- flake.nix overlay.nix
-            fi
-            exec nixfmt "$@"
+            exec nixfmt "$@" flake.nix overlay.nix
           '';
         }
       );
